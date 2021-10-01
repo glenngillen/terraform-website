@@ -84,9 +84,9 @@ Auto-apply has the following exception:
 
 The Terraform version to use for all operations in the workspace. The default value is whichever release was current when the workspace was created.
 
-You can choose "latest" to automatically update a workspace to new versions, or you can choose a specific version.
+You can lock a workspace to a specific Terraform version, or you can select an automatically updating version like `~> 1.0.0` (the latest 1.0.x release) so that the workspace will use the newest patch version in your preferred version series. The settings page offers automatically updating versions for the last three minor versions of Terraform.
 
--> **API:** You can specify a Terraform version when [creating a workspace](../api/workspaces.html#create-a-workspace) via the API.
+-> **API:** You can specify a Terraform version when [creating a workspace](../api/workspaces.html#create-a-workspace) via the API. The API also supports setting a valid [version constraint](/docs/language/expressions/version-constraints.html) as the Terraform version.
 
 ### Terraform Working Directory
 
@@ -132,7 +132,7 @@ The default experience is *Structured Run Output*, which displays your plan and 
 
 The Console UI experience is the traditional Terraform experience, where live text logging is streamed in real time to the UI. This experience most closely emulates the CLI output.
 
-~> **Note:** Your workspace must be configured to use a Terraform version of 1.0.5 or higher for the Structured Run Output experience to be fully supported. Workspaces running versions from 0.15.2 may see partial functionality. Workspaces running versions below 0.15.2 will default to the "Console UI" experience regardless of the User Interface setting.  
+~> **Note:** Your workspace must be configured to use a Terraform version of 1.0.5 or higher for the Structured Run Output experience to be fully supported. Workspaces running versions from 0.15.2 may see partial functionality. Workspaces running versions below 0.15.2 will default to the "Console UI" experience regardless of the User Interface setting.
 
 ## Locking
 
